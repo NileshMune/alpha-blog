@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   # NM : create my pages controller and home action
   root 'pages#home'
   get 'about', to: 'pages#about'
+  
+  resources :articles
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
