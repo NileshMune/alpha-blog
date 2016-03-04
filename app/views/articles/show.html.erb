@@ -1,6 +1,26 @@
-<h1> Displaying the article just inserted. </h1>
+<h1> Displaying selected article </h1>
 
 <p> Title <%= @article.title %> </p>
 <p> Desc <%= @article.desc %>  </p>
 
-<p> <%= link_to 'Back to index', articles_path %> </p>
+<%= render 'shared/errors', obj: @article %>
+
+
+<div class="row">
+  <div class="col-xs-12">
+
+    <div class="form-group">
+      <div class="control-label col-sm-2">
+        <p> Title <%= @article.title %> </p>
+      </div>
+      <div class="col-sm-8">
+        <p> Desc <%= @article.desc %>  </p>
+      </div>
+    </div>
+
+    <div class="col-xs-4 col-xs-offset-4">
+      [ <%= link_to 'Return to index', articles_path %> ]
+    </div>
+
+</div>
+</div>

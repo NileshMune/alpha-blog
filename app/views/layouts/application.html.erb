@@ -10,12 +10,7 @@
 
 
 <%= render 'layouts/navigation' %>
-
-<% flash.each do |name,msg| %>
-  <ul>
-    <li> <%= msg %> </li>
-  </ul>
-<% end %>
+<%= render 'layouts/messages' %>
 
 <div class="container">
   <%= yield %>
