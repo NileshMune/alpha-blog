@@ -1,26 +1,13 @@
-<h1> Displaying selected article </h1>
-
-<p> Title <%= @article.title %> </p>
-<p> Desc <%= @article.desc %>  </p>
-
-<%= render 'shared/errors', obj: @article %>
-
+<h2> <strong> <%= @article.title %> <strong> </h2>
 
 <div class="row">
-  <div class="col-xs-12">
-
-    <div class="form-group">
-      <div class="control-label col-sm-2">
-        <p> Title <%= @article.title %> </p>
-      </div>
-      <div class="col-sm-8">
-        <p> Desc <%= @article.desc %>  </p>
-      </div>
-    </div>
-
-    <div class="col-xs-4 col-xs-offset-4">
-      [ <%= link_to 'Return to index', articles_path %> ]
-    </div>
-
-</div>
+  <div class="col-xs-8">
+    <h4> <strong> Description </strong> </h4>
+    <hr>
+    <%= simple_format(@article.desc) %>
+    <hr>
+    
+    <%= link_to 'Edit this aticle', edit_article_path(@article), class:'btn btn-xs btn-primary' %>
+    <%= link_to 'Delete this article', article_path(@article), method: :delete, class:'btn btn-xs btn-danger', data: {confirm:"Sure ?"} %>
+  </div>
 </div>
