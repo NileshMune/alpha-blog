@@ -1,0 +1,27 @@
+<h2> List of all users </h2>
+
+<% @users.each do |user| %>
+<div class="row">
+  <div class="col-xs-8 col-xs-offset-2">
+    <div class="well well-lg">
+      
+      <div class="article-title">
+        <%= link_to user.username, user_path(user) %>
+      </div>
+      
+      <div class="article-body">
+        <%= user.email %>  
+      </div>
+
+      <hr>
+      <%= link_to 'Edit', edit_user_path(user), class:"btn btn-xs btn-primary" %>
+      <%= link_to 'Delete',user_path(user), method: :delete, data: {confirm: "Are you sure ?"}, class:"btn btn-xs btn-danger"  %>
+
+      
+    </div>
+  </div>
+</div>
+
+
+
+<% end %>

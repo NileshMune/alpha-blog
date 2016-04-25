@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   # NM : create my pages controller and home action
   root 'pages#home'
   get 'about', to: 'pages#about'
+  get 'signup', to: 'users#signup'
+  resources :users, except:[:new]
   
   resources :articles
 
